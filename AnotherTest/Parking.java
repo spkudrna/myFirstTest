@@ -20,7 +20,8 @@ public class Parking
            //add
            if (car.intValue() > 0)
            {
-               System.out.print(driveway.push(car) + " Has been added to driveway\n");
+               driveway.push(car);
+               System.out.println("Driveway: " + driveway);
            }
            
            //Remove
@@ -29,16 +30,22 @@ public class Parking
                while (driveway.peek().intValue() != Math.abs(car.intValue()))
               
                {
-                   System.out.print(street.push(driveway.pop()) + " Has been moved out of driveway to street\n");;
+                   street.push(driveway.pop());
+                   System.out.println("\nDriveway: " + driveway);
+                   System.out.println("Street: " + street + "\n");
                }
                System.out.println(driveway.pop() + " Has been located and removed\n");
                
                //adds street cars back into driveway
                System.out.println();
-               for (Integer cars : street)
+               int size = street.size();
+               for (int i = 0; i < size; i++)
                {
-                   System.out.println(driveway.push(cars) + " Has been added back to driveway");
+                   System.out.println(driveway.push(street.pop()) + " Has been added back to driveway");
+                   
                }
+               
+               System.out.println("\n...Updated...\nDriveway: " + driveway + "\nStreet: " + street);
            }
        }
     }
