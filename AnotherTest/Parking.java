@@ -42,7 +42,6 @@ public class Parking
                for (int i = 0; i < size; i++)
                {
                    System.out.println(driveway.push(street.pop()) + " Has been added back to driveway");
-                   
                }
                
                System.out.println("\n...Updated...\nDriveway: " + driveway + "\nStreet: " + street);
