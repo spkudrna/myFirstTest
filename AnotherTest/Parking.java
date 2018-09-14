@@ -26,18 +26,25 @@ public class Parking
            //Remove
            else if (car.intValue() < 0)
            {
-               while (driveway.peek().intValue() != Math.abs(car.intValue()))
-              
+               if (driveway.size() == 0)
                {
-                   System.out.print(street.push(driveway.pop()) + " Has been moved out of driveway to street\n");;
+                   System.out.println("Driveway is empty");
                }
-               System.out.println(driveway.pop() + " Has been located and removed\n");
-               
-               //adds street cars back into driveway
-               System.out.println();
-               for (Integer cars : street)
+               else 
                {
-                   System.out.println(driveway.push(cars) + " Has been added back to driveway");
+                   while (driveway.peek().intValue() != Math.abs(car.intValue()))
+                  
+                   {
+                       System.out.print(street.push(driveway.pop()) + " Has been moved out of driveway to street\n");
+                   }
+                   System.out.println(driveway.pop() + " Has been located and removed\n");
+                   
+                   //adds street cars back into driveway
+                   System.out.println();
+                   for (Integer cars : street)
+                   {
+                       System.out.println(driveway.push(cars) + " Has been added back to driveway");
+                   }
                }
            }
        }
