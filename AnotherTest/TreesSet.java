@@ -31,21 +31,19 @@ public class TreesSet
     }
     
     //Cuts off ending punctuation (If any)
-    public static String clean(String word)
+    public static String clean(String s)
     {
-        if (Character.isLetter(word.charAt(word.length()-1)))
+        String r = "";
+        for (int i = 0; i<s.length(); i++)
         {
-            return word;
-        }
-        else
-        {
-            int i = 0;
-            while ((Character.isLetter(word.charAt(i))))
+            char c = s.charAt(i);
+            if (Character.isLetter(c))
             {
-                i++;
+                r = r + c;
             }
-            return word.substring(0, i);
+
         }
+        return r.toLowerCase();
     }
 }
 
